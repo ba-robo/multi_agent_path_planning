@@ -35,7 +35,7 @@ class SippPlanner(SippGraph):
                 if i[0] > end_t or i[1] < start_t:
                     continue
 
-                if i[0] > start_t:  # otherwise in timestamp t-1 the cell is empty, no edge collisions
+                if i[0] >= start_t:  # otherwise in timestamp t-1 the cell is empty, no edge collisions
                     time = i[0]
                     for name, obstacle in self.dyn_obstacles.items():
                         # edge collision condition
